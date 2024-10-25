@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<noscript>Для кореектной работы приложение включите JavaScript!</noscript>
+		<header>
+			<div class="left">
+				<span class="nameProject">Проект 10</span>
+				<span class="date"
+					>Обновлено 18.10.2024 в 10:11</span
+				>
+				<button class="newProject" id="newProjectBtn">Новый проект</button>
+			</div>
+			<div class="login">
+				<button class="loginBtn"><img src="img/login.png" alt="" /></button>
+			</div>
+		</header>
+
+		<aside></aside>
+
+		<div class="overlay"></div>
+
+		<div class="popup" id="popup1">
+			<div class="close">
+				<button class="close-btn">&times;</button>
+			</div>
+
+			<h4 class='createNewProjectTitle'>Создание нового проекта</h4>
+			<p class='connect'>Подключите проект через Я.Вебмастер</p>
+			<div class="info">
+				<i><img src="img/important.png" alt="" /></i>
+				<p class="infoText">
+					Убедитесь, что вы авторизованы в <a href="#">аккаунте Яндекс</a> и у
+					вас создано приложение. Подробная <a href="#">видео-инструкция</a> по
+					созданию приложения.
+				</p>
+			</div>
+			<div class="switch-wrapper">
+				<label class="switch-label">Автоматически</label>
+				<label class="switch" id="autoCheckbox">
+					<input type="checkbox" />
+					<span class="slider round"></span>
+				</label>
+			</div>
+			<div class="notAuto">
+				<label for='token'>Access token</label>
+				<input id='token' type="text" placeholder="Введите данные из Я.Вебмастера" />
+
+				<label for='userID'>User ID</label>
+				<input id='userID' type="text" placeholder="Введите данные из Я.Вебмастера" />
+
+				<label for='hostID'>Host ID</label>
+				<input id='hostID' type="text" placeholder="Введите данные из Я.Вебмастера" />
+			</div>
+
+			<div class="enterData" style='display: none;'> 
+				<label for="projects" class="select-label">Проект для подключения</label>
+				<select name="" id="inputProjects">
+					<option value="" disabled selected hidden>Выберите проект из списка</option>
+				</select>
+				<p id='firstWarn' class='warning' style='display: none;'>Необходимо выбрать проект</p>
+				<div class="select-wrapper" id='projects' style='display: none;'>
+					<div class="scrolling">
+						<div class="select">Проект 1</div>
+					<div class="select">Проект 2</div>
+					<div class="select">Проект 3</div>
+					<div class="select">Проект 4</div>
+					<div class="select">Проект 5</div>
+					<div class="select">Проект 6</div>
+					<div class="select">Проект 7</div>
+					</div>
+					
+				</div>
+				<label for="nameProject">Название</label>
+				<input id="nameProject" type="text" placeholder='Введите название проекта'>
+				<p id='secondWarn' class='warning' style='display: none;'>Необходимо указать название проекта</p>
+				<label for="folder">Папка проекта</label>
+				<!-- Выпадающий список -->
+				<select name="" id="inputFolders">
+					<option value="" disabled selected hidden>Выберите или создайте папку для проекта</option>
+				</select>
+			
+				<!-- Список папок -->
+				<div class="select-wrapper" id='folders'>
+					<div class="scrolling" id="folderList">
+						<div class="selectFolder" data-value="folder1"><img src="img/folder.png" alt="">Папка 1</div>
+						<div class="selectFolder" data-value="folder2"><img src="img/folder.png" alt="">Папка 2</div>
+						<div class="selectFolder" data-value="folder3"><img src="img/folder.png" alt="">Папка 3</div>
+						<div class="selectFolder" data-value="folder4"><img src="img/folder.png" alt="">Папка 4</div>
+						<div class="selectFolder" data-value="folder5"><img src="img/folder.png" alt="">Папка 5</div>
+					</div>
+					<div class="createNewFolder">
+						<button id="newFolderBtn"><i><img src="img/add.png" alt=""></i> Новая папка</button>
+					</div>
+					<div class="create-wrapper" style='display: none;'>
+						<div class="inputFolderName">
+							<input type="text" id="folderNameInput" placeholder='Введите название'>
+						</div>
+						<div class="create">
+							<button id='createFolderBtn'><i><img src="img/add.png" alt=""></i> Создать</button>
+						</div>
+					</div>
+				</div>
+				<div class="buttons enter" style='display: none;'>
+					<button class="save">Сохранить</button>
+					<button class="secondary">Отменить</button>
+				</div>
+			</div>
+
+			<div class="done" style='display: none;'>
+				<div class="info">
+					<i><img class='icon' src="img/done.png" alt="" /></i>
+					<p class="infoText">
+						Проект успешно подключен
+					</p>
+				</div>
+				<div class="buttons finish">
+					<button class="okay">Завершить</button>
+					<button class="cancel">Отключить</button>
+				</div>
+			</div>
+
+			<div class="auto" style="display: none">
+				<label id="clientIdLabel">Client ID <a href="#"><img src="img/help.png" alt="" /></a
+				></label>
+				<input type="text" placeholder="Введите Client ID" />
+			</div>
+
+			<div class="buttons connection">
+				<button class="primary">Подключить</button>
+				<button class="secondary">Отменить</button>
+			</div>
+			<div id='preloader'">
+				<div class="ldio-yzaezf3dcmj">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+
+
+		<script src="script.js"></script>
+	</body>
+</html>
